@@ -37,6 +37,8 @@ Apache KFKA | ████░░░░░░ (4/10) |
 ## Fomat will be as follows:
 ### Month/Year (MM/YYYY)
 - **Day/Month/Year (DD/MM/YYYY)** 
+
+    Topics: (List of topics that I will write about)
     - Learned about this
     - Learned about that
     - Learned about this other thing
@@ -48,10 +50,20 @@ Apache KFKA | ████░░░░░░ (4/10) |
 ----------------------------------------------------------
 ### 01/2024
 - **01/01/2024**
+
+    Topics: (Laravel)
     - It turns out that in (Laravel Eloquent) there is an `increment` and `decrement` methods built in that you can use to increment or decrement a column value by a given amount. For example, if you have a `balance` column in your `users` table, you can do something like this: `$user->increment('balance', 100);` to add 100 to the user's balance. You can also do `$user->decrement('balance', 100);` to subtract 100 from the user's balance. But make sure that you are not using SIGNED INT for the column, otherwise you will have negative values. You can use UNSIGNED INT instead.
 
     **Resources:**
     - [Laravel Eloquent increment()](https://laravel.com/docs/10.x/queries#increment-and-decrement)
+
+- **02/01/2024**
+
+    Topics: (Twitter/X)
+    - I like Twitter/X, its my favorite social media platform. I like to use it follow people I am interested in and inspire me. Twitter/X has a `For You` tab which is an alothorithmically generated feed of tweets that it thinks you will like. I like this feature because it helps me discover new people and things that I am interested in. But, recently I have noticed Its been showing me things that I am not interested in whatsoever. When you go to `https://twitter.com/settings/your_twitter_data/twitter_interests` you can see what are the topcis Twitter/X thinks you are interested in. I counted them using javascript in the console and I have `377` topics apparently. And belive me when I see that 80% of them are not things I am interested in (Example: Mark Zuckerberg, Vladimir Putin, Pumpkin recipes :jack_o_lantern:, etc). So, I deleted them by executing javascript in the browser's console that will uncheck all the checkboxes. Hope this helps me get better recommendations. :smile:
+
+    **Resources:**
+    - [Bulk Uncheck Twitter/X Interests](https://peshmerge.io/how-to-check-uncheck-all-checkboxes-on-a-web-page-using-vanilla-javascript/)
 
 
 
