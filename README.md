@@ -2,6 +2,8 @@
 
 Welcome! Here, this is a personal space where I share my learning progress and thoughts about things. If for some reason you find this repo, I hope you find it useful. :smile:
 
+I am also making in sync with my dev blog on [dev.to](https://dev.to/). You can find it [here](https://dev.to/irakan).
+
 ## Why am I doing this? :thinking:
 They say that writing things down helps you remember things better. I'm doing this to help me remember what I've learned and to reflect on my progress. It will organize my thoughts and help me see the bigger picture. I also hope that this will help me become a better writer.
 
@@ -66,9 +68,30 @@ Apache KFKA | ████░░░░░░ (4/10) |
     **Resources:**
     - [Bulk Uncheck Twitter/X Interests](https://peshmerge.io/how-to-check-uncheck-all-checkboxes-on-a-web-page-using-vanilla-javascript/)
 
+- **03/01/2024**
 
+    Topics: (Meetings)
+    - Today while driving, I was listening to a podcast between David Heinemeier Hansson and Jason Fried (Basecamp founders). They were talking about how toxic meetings are for various reasons:
+        - 1 hour meeting with 5 people is not a 1 hour meeting, its a 5 hour meeting. Because you are taking 5 hours of each person's time. So, you need to be very careful when you call a meeting.
+        - They involve coordination, causing scheduling issues and disrupting everyone's workflow and mindset
+        - They are usually not productive, because people are rarely prepared for them.
+        - They drift off topic and go on tangents that are not relevant to the meeting.
 
+        After I finished listing to the podcast, I wanted to check if there are facts that support this. I found this reserch on [Harvard Business Review](https://hbr.org/2017/07/stop-the-meeting-madness) According to their survey of 182 senior managers across industries:
+        - 65% said meetings hindered their personal work completion.
+        - 71% found meetings unproductive and inefficient.
+        - 64% felt meetings compromised deep thinking.
+        - 62% believed meetings missed opportunities to bring the team closer.
 
+        So, here is what some companies (Example: Basecamp and 37signals) do to avoid traditional meetings:
+        - They go to first-writing approach instead of a first-meeeting approach. If there's something to discuss, write it down first, share it with the team, and then have a meeting only if and only if it's absolutely necessary.
+        - They use automatic weekly check-ins, like "What did you do this week?" through platforms like Slack. This keeps everyone informed and enables the creation of weekly reports for the team and stakeholders.
+        - There are also occasional automated "social questions" to encourage team members to share non-work-related activities, fostering better relationships.
 
+        As a result, the stakeholders are happy because they are getting weekly reports and the team is happy because they are not wasting their time in meetings. :smile:
 
+        **Resources:**
+        - [Stop the Meeting Madness](https://hbr.org/2022/03/dear-manager-youre-holding-too-many-meetings)
+        - [Meetings are Toxic (Season 2)](https://37signals.com/podcast/meetings-are-toxic-season-2/)
+        - [How We Communicate](https://37signals.com/how-we-communicate/)
 
