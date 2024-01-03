@@ -1,8 +1,8 @@
 # My Learning Journey
 
-Welcome! Here, this is a personal space where I share my learning progress and thoughts about things. If for some reason you find this repo, I hope you find it useful. :smile:
+Welcome!, this is a personal space where I share my learning progress and thoughts about things. If for some reason you find this repo, I hope you find it useful. :smile:
 
-I am also making in sync with my dev blog on [dev.to](https://dev.to/). You can find it [here](https://dev.to/irakan).
+To make things neater and more organized for myself, I will be making it in sync with my dev blog on [dev.to](https://dev.to/). Can be found [here](https://dev.to/irakan) for better categorization and easier navigation.
 
 ## Why am I doing this? :thinking:
 They say that writing things down helps you remember things better. I'm doing this to help me remember what I've learned and to reflect on my progress. It will organize my thoughts and help me see the bigger picture. I also hope that this will help me become a better writer.
