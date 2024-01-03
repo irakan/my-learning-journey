@@ -72,7 +72,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
     Topics: (Meetings)
     - Today while driving, I was listening to a podcast between David Heinemeier Hansson and Jason Fried (Basecamp founders). They were talking about how toxic meetings are for various reasons:
-        - 1 hour meeting with 5 people is not a 1 hour meeting, its a 5 hour meeting. Because you are taking 5 hours of each person's time. So, you need to be very careful when you call a meeting.
+        - 1 hour meeting with 5 people is not a 1 hour meeting, its a 5 hour meeting. Because you are taking 1 hour of each person's time. So, you need to be very careful when you call a meeting.
         - They involve coordination, causing scheduling issues and disrupting everyone's workflow and mindset
         - They are usually not productive, because people are rarely prepared for them.
         - They drift off topic and go on tangents that are not relevant to the meeting.
