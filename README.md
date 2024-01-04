@@ -95,3 +95,33 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - [Meetings are Toxic (Season 2)](https://37signals.com/podcast/meetings-are-toxic-season-2/)
         - [How We Communicate](https://37signals.com/how-we-communicate/)
 
+- **04/01/2024**
+  
+    Topics: (Mentalhealth, Motivation)
+    - Today I came across multiple posts talking about "Toxic Positivity", and the first question that came to my mind is "How can positivity be toxic!?" 😅. Here is the explanation of what does "Toxic Positivity" means:
+
+    > Toxic positivity is the belief that one should always maintain a positive mindset, no matter the circumstances. It discourages acknowledging or expressing negative emotions.
+    
+    I did some research about this and actually, the words in (Toxic positivity) are oxymoron, which means logically there is no such thing as "Toxic positivity". It's like saying "Square Circle" or "Married Bachelor" which doesn't make any sense.
+    
+    So, for now, let's call it "Fake positivity" or "Empty positivity". Which I truly believe it exists, where people throw around phrases like:
+    - Good vibes only. ✌️😁
+    - Stop being so negative, Think happy thoughts only. 🛑😃
+    - Just be positive. 😊
+    - Stay positive, everything will be fine.😃
+    
+    to someone going through a tough time or feeling stuck. These words feel empty and It's like a quick-fix without really understanding the depth of what the person is going through.
+    
+    I came across this example that will clarify things better:
+    
+    > Would you tell a crying baby to just cheer up and think positive?
+    > No. You would realize the baby is crying because they are cold, hungry, wet, or want to be held. You would fix what was wrong instead of trying to silence them.
+    
+    It's good to have emotions and feel them.. just don't stay there forever. And If you surround yourself with an environment that solely emphasizes positive vibes, it can be harmful because it promotes an unrealistic approach to life.
+    
+    > We should grieve, be angry, feel rejected when appropriate. However, the key is not to stay in the emotion.
+    
+    **Resources:**
+    - [Toxic Positivity](https://www.lipstickalley.com/threads/toxic-positivity.2017256/)
+    - [Prerna Rohilla’s Post](https://www.linkedin.com/posts/contentonweb-prerna-rohilla_hello-fam-i-am-back-with-thursday-think-activity-7082630849363423232-7c8m)
+    - [Toxic Positivity? Seriously?](https://www.youtube.com/watch?v=PW0q2jWouxQ)
