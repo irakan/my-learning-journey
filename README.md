@@ -126,7 +126,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - [Prerna Rohilla’s Post](https://www.linkedin.com/posts/contentonweb-prerna-rohilla_hello-fam-i-am-back-with-thursday-think-activity-7082630849363423232-7c8m)
         - [Toxic Positivity? Seriously?](https://www.youtube.com/watch?v=PW0q2jWouxQ)
 
-- **05/01/2024**
+- **06/01/2024**
   
     Topics: (kubernetes)
     - I recently found myself lacking knowledge about Kubernetes. I have read some posts about it, and I know it's like a management tool. It's somewhat similar to Composer and NPM for managing packages, but Kubernetes is for managing Docker containers. I didn't dive into it in the past because it was not relevant to me, and to be completely honest, I was running away from it (maybe scared). Now it's time to face it. 😬
