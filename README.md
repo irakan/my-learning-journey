@@ -125,3 +125,34 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - [Toxic Positivity](https://www.lipstickalley.com/threads/toxic-positivity.2017256/)
         - [Prerna Rohilla’s Post](https://www.linkedin.com/posts/contentonweb-prerna-rohilla_hello-fam-i-am-back-with-thursday-think-activity-7082630849363423232-7c8m)
         - [Toxic Positivity? Seriously?](https://www.youtube.com/watch?v=PW0q2jWouxQ)
+
+- **05/01/2024**
+  
+    Topics: (kubernetes)
+    - I recently found myself lacking knowledge about Kubernetes. I have read some posts about it, and I know it's like a management tool. It's somewhat similar to Composer and NPM for managing packages, but Kubernetes is for managing Docker containers. I didn't dive into it in the past because it was not relevant to me, and to be completely honest, I was running away from it (maybe scared). Now it's time to face it. 😬
+
+        As they say, knowing the name of the enemy is the first step towards winning! Today, I want to shed light on its name. Kubernetes!? For some reason, I didn't like it. It's a long word, and I always find myself struggling to pronounce it. 🤔
+        
+        After researching, I found that Craig McLuckie, one of the founders of the Google-based Kubernetes project, said:
+        
+        > We had 13 other names we couldn’t get past Google’s legal department. It was the last day, and I had to pick something. I was driving into work, and I thought, ‘Well, [the technology] is like driving a container ship. What would the helmsman be called?’ So I tried to find something exotic. I had no idea what the Greek for that was. I had to look it up.
+        
+        Basically, the word "κυβερνήτης" ([Check How to pronounce κυβερνήτης](https://en.bab.la/pronunciation/greek/%CE%BA%CF%85%CE%B2%CE%B5%CF%81%CE%BD%CE%AE%CF%84%CE%B7%CF%82)) is a Greek term that translates to "helmsman" or "steersman" in English.
+        
+        To make sure, I opened Google Translator and typed "helmsman" then translated it into Greek, which gave me "πηδαλιούχος" pronounced as "pidalioúchos." That's incorrect; it's not even close to Kubernetes's word sound. I dug deeper and found the Liddell & Scott Greek-to-English lexicon, published in 1909, which had these meanings: "steersman, helmsman, guide, governor" for "κυβερνήτης." on page 397, which I was looking for. 
+        
+        Now, what does "helmsman" mean?
+        
+        > A helmsman or helm (sometimes driver or steersman) is a person who steers a ship, sailboat, submarine, or any other type of maritime vessel or spacecraft. 
+        
+        Another question: Why do people mention it sometimes as K8s?
+        
+        "K8s" is shorthand for Kubernetes because there are 8 letters between "K" and "s" in the word "Kubernetes" making it shorter and easier to type without spelling mistakes. 
+        
+        Now that I know the origin of "Kubernetes" I can sleep in peace. 😴
+        
+        **Resources:**
+        - [How did they ever come up with that kooky ‘Kubernetes’ name? Here’s the inside story
+        ](https://www.geekwire.com/2016/ever-come-kooky-kubernetes-name-heptio/)
+        - [Liddell & Scott Greek-to-English lexicon, page:397](https://archive.org/details/dli.ernet.510177/page/397)
+        - [Helmsman Definition](https://en.wikipedia.org/wiki/Helmsman).
