@@ -156,3 +156,37 @@ Apache KFKA | ████░░░░░░ (4/10) |
         ](https://www.geekwire.com/2016/ever-come-kooky-kubernetes-name-heptio/)
         - [Liddell & Scott Greek-to-English lexicon, page:397](https://archive.org/details/dli.ernet.510177/page/397)
         - [Helmsman Definition](https://en.wikipedia.org/wiki/Helmsman).
+
+- **08/01/2024**
+  
+    Topics: (Hypervisor)
+    - Imagine you have a powerful computer, and you want to run multiple operating systems (like Windows, Linux, or others) on the same machine, all at the same time. 
+
+        This is where a hypervisor comes in. Hypervisor is like a traffic cop for your computer. Its main job is to manage and control different operating systems that want to use the same hardware (like your computer's processor, memory, and storage).
+        
+        The hypervisor treats resources—like CPU, memory, and storage—as a pool that can be easily reallocated between existing guests or to new virtual machines.
+
+        There are two types of hypervisors:
+        - Type 1: Bare Metal Hypervisor
+            - What? 
+                - A bare-metal (or native) hypervisor is a layer of software that runs directly on the host's hardware and manages the guest operating systems that run on top of it.
+            - Who?
+                - It's used by large enterprises and data centers(like Amazon, Google, Facebook, etc) to run multiple operating systems on the same machine.
+            - Example:
+                - VMware ESXi, Microsoft Hyper-V, Citrix Hypervisor, and Oracle VM Server for x86.
+            - When to Use:
+                - Enterprise Servers: If you're managing a large data center or server farm, Type 1 hypervisors are often preferred for their efficiency and performance.
+                - Resource Optimization: When you need the maximum possible performance and want the hypervisor to have direct access to the hardware resources.
+        - Type 2: Hosted Hypervisor
+            - What?
+                - A hosted hypervisor is a hypervisor that runs on top of an operating system (like Windows, Linux, or macOS) and shares the host's hardware resources with the guest operating systems.
+            - Who?
+                - It's used by developers and individuals to run multiple operating systems on the same machine.
+            - When to Use:
+                - Ease of Use: When you want a simpler setup and don't require the highest level of performance.
+                - Software Development: For developers who need to test their applications on multiple platforms without using separate physical machines.
+            - Example:
+                - VMware Workstation, VMware Fusion, Oracle VM VirtualBox, and Parallels Desktop for Mac.
+
+            **Resources:**
+            - [What is a hypervisor?](https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor)
