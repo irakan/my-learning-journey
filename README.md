@@ -178,7 +178,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
             - Example: VMware Workstation, Oracle VM VirtualBox.
 
         Here is a diagram that explains it better than words. :smile: <br><br>
-        svg image: ![Hypervisor](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Hyperviseur.svg/400px-Hyperviseur.svg.png)
+        ![Hypervisor](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Hyperviseur.svg/400px-Hyperviseur.svg.png)
 
 
 
