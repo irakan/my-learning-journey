@@ -160,33 +160,28 @@ Apache KFKA | ████░░░░░░ (4/10) |
 - **08/01/2024**
   
     Topics: (Hypervisor)
-    - Imagine you have a powerful computer, and you want to run multiple operating systems (like Windows, Linux, or others) on the same machine, all at the same time. 
+    - What is a hypervisor? A hypervisor is a software that creates and runs virtual machines (VMs). It allows you to run multiple operating systems on a single physical machine and share the underlying hardware resources. It will allocate the resources (CPU, RAM, Storage, etc) to each VM. <br><br>
 
-        This is where a hypervisor comes in. Hypervisor is like a traffic cop for your computer. Its main job is to manage and control different operating systems that want to use the same hardware (like your computer's processor, memory, and storage).
-        
-        The hypervisor treats resources—like CPU, memory, and storage—as a pool that can be easily reallocated between existing guests or to new virtual machines.
+        There are two types:
 
-        There are two types of hypervisors:
-        - Type 1: Bare Metal Hypervisor
-            - What? 
-                - A bare-metal (or native) hypervisor is a layer of software that runs directly on the host's hardware and manages the guest operating systems that run on top of it.
-            - Who?
-                - It's used by large enterprises and data centers(like Amazon, Google, Facebook, etc) to run multiple operating systems on the same machine.
-            - Example:
-                - VMware ESXi, Microsoft Hyper-V, Citrix Hypervisor, and Oracle VM Server for x86.
-            - When to Use:
-                - Enterprise Servers: If you're managing a large data center or server farm, Type 1 hypervisors are often preferred for their efficiency and performance.
-                - Resource Optimization: When you need the maximum possible performance and want the hypervisor to have direct access to the hardware resources.
+        - Type 1: Bare Metal Hypervisor (Native Hypervisor)
+           -  What? It directly communicates with hardware, making it efficient and secure without a middleman OS.
+            -  Who? Used by enterprises and data centers (e.g., Amazon, Google) for running multiple OS on one machine.
+            -  When to Use: Large data centers or server farms for maximum performance and direct hardware access.
+            - Example: VMware ESXi, Microsoft Hyper-V.
+
+
         - Type 2: Hosted Hypervisor
-            - What?
-                - A hosted hypervisor is a hypervisor that runs on top of an operating system (like Windows, Linux, or macOS) and shares the host's hardware resources with the guest operating systems.
-            - Who?
-                - It's used by developers and individuals to run multiple operating systems on the same machine.
-            - When to Use:
-                - Ease of Use: When you want a simpler setup and don't require the highest level of performance.
-                - Software Development: For developers who need to test their applications on multiple platforms without using separate physical machines.
-            - Example:
-                - VMware Workstation, VMware Fusion, Oracle VM VirtualBox, and Parallels Desktop for Mac.
+            - What? Operates within the regular OS, less powerful but user-friendly.
+            - Who? Used by developers and individuals for running multiple OS on one machine.
+            - When to Use: Simple setups or software development when top performance is not critical.
+            - Example: VMware Workstation, Oracle VM VirtualBox.
 
-            **Resources:**
-            - [What is a hypervisor?](https://www.redhat.com/en/topics/virtualization/what-is-a-hypervisor)
+        Here is a diagram that explains it better than words. :smile: <br><br>
+        svg image: ![Hypervisor](https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Hyperviseur.svg/400px-Hyperviseur.svg.png)
+
+
+
+        **Resources:**
+        - [What is a hypervisor?](https://aws.amazon.com/what-is/hypervisor/)
+        - [Hypervisor Diagram](https://en.wikipedia.org/wiki/Hypervisor#/media/File:Hyperviseur.svg)
