@@ -216,7 +216,55 @@ Apache KFKA | ████░░░░░░ (4/10) |
     **Resources:**
     - [What Is a Standard Container](https://iximiuz.com/en/posts/oci-containers/)
 
+- **09/01/2024**
+  
+    Topics: (Data Lake, Data Warehouse, Data Mart)
 
+    - Well, data is everywhere every second of every day.As a backend developer, I used to  dodge terms related to data engineering. However, due to a recent project, I've started learning more about it.
+    <br><br>
+        <img src="memes/2.jpg" alt="how-docker-works" width="200"/>
+    <br><br>
+        So, I came across these terms: Data Lake, Data Warehouse, and Data Mart. I will break them down into simple terms that I can understand. 
+        
+        The format will be as follows:
+        - Definition: (Definition)
+        - Characteristics: (Characteristics)
+        - Why it exists: (Why it exists)
+        - Tools: (Tools that can be used to implement it)
+<br><br><br>
 
+    1. **Data Lake:**
+        - **Definition:** A huge storage space for all raw data (For example: JSON, Videos, Database dumps, etc) where everything is dumped without organization.
+        - **Characteristics**:
+            - Stores raw data without modification.
+            - Store structured, semi-structured, and unstructured data.
+            - Can be Used for the entire data lifecycle.
+        - **Why it exists:** Data is valuable nowdays and it can be used for many things. So, store it and you can use it later when you need it.
+        - **Tools:** 
+            - *Free:* Hadoop Distributed File System (HDFS)
+            - *Paid:* Amazon S3, Azure Data Lake Storage, Google Cloud Storage
+<br><br><br>
+    2. **Data Warehouse:**
+        - **Definition:** An organized storage facility where data is structured and cleaned.
+        - Characteristics:
+            - Stores data in a structured way.
+            - Requires transformed and cleaned data.
+            - Time-variant data, meaning any existing data will be archived after perid of time (Example: 1 year) and stored in the Data Lake.
+        - **Why it exists:** Since data is stored in a structured way, it can be used for reporting and analysis.
+        - **Tools:** 
+            - *Free:* PostgreSQL, MySQL, MariaDB (limitions: not scalable for HUGE data and not optimized for analytics purposes)
+            - *Paid:* Amazon Redshift, Google BigQuery
+<br><br><br>
+    3. **Data Mart:**
+        - **Definition:** A subset of a Data Warehouse, with a focus on specific topics.
+        - Characteristics:
+            - Users don't need advanced technical knowledge.
+            - Subset of a Data Warehouse, smaller and topic-focused.
+            - Users have read-only access to department-specific information.
+        - **Why it exists:** Provides users a quick and easy access to data for specific topics.
+        - **Tools:** 
+            - *Free:* Microsoft Power BI (limited features)
+            - *Paid:* Microsoft Power BI, Tableau, QlikView, Looker
 
-
+    **Resources:**
+    - [Data Lake vs Data Warehouse vs Data Mart](https://www.sprinkledata.com/blogs/data-lake-vs-data-warehouse-vs-data-mart)
