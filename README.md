@@ -186,3 +186,37 @@ Apache KFKA | ████░░░░░░ (4/10) |
         **Resources:**
         - [What is a hypervisor?](https://aws.amazon.com/what-is/hypervisor/)
         - [Hypervisor Diagram](https://en.wikipedia.org/wiki/Hypervisor#/media/File:Hyperviseur.svg)
+
+- **09/01/2024**
+  
+    Topics: (Docker)
+    - Have you ever wondered how Docker containers work? <br><br>
+    <img src="memes/1.png" alt="how-docker-works" width="200"/>
+
+        First, lets make these things clear:
+
+        - VMs have their own kernel, making them heavier and slower compared to Docker containers.
+        - Docker containers share the host machine's kernel, making them lightweight and faster than VMs.
+        - There are different ways to create containers, but Docker is the most popular one (example: Podman, LXC, LXD, etc).
+        - A container must follow the OCI (Open Container Initiative) standards to be considered a container.
+
+        Now, lets see how (Docker Linux containers) works. <br><br>
+
+        They are normal Linux processes that run in an isolated environment. And they rely on the following Linux features:
+        - Namespaces: This keeps each container separate from the others. It isolates things like processes, network, user IDs, and file systems, but they still share the same basic system (kernel).
+        - Control groups (cgroups): These control and limit how much of the computer's resources (like CPU, memory, disk, and network) each container can use. It helps in managing and isolating resource usage for a group of processes.
+
+        So, now what happens when you execute a command like `docker run -it ubuntu bash`? <br><br>
+        - Docker will create a new container process.
+        - a new namespace will be created for the container.
+        - a new cgroup will be created for the container.
+        - a new root filesystem will be created for the container.
+        - a new network interface will be created for the container.
+
+    **Resources:**
+    - [What Is a Standard Container](https://iximiuz.com/en/posts/oci-containers/)
+
+
+
+
+
