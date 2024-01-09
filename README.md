@@ -191,7 +191,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
   
     Topics: (Docker)
     - Have you ever wondered how Docker containers work? <br><br>
-    <img src="memes/1.png" alt="how-docker-works" width="200"/>
+    <img src="memes/1.png" alt="how-docker-works" width="200"/><br><br>
 
         First, lets make these things clear:
 
