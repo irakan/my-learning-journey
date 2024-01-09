@@ -245,8 +245,8 @@ Apache KFKA | ████░░░░░░ (4/10) |
             - *Paid:* Amazon S3, Azure Data Lake Storage, Google Cloud Storage
 <br><br><br>
     2. **Data Warehouse:**
-        - **Definition:** An organized storage facility where data is structured and cleaned.
-        - Characteristics:
+        - **Definition:** An organized storage place where data is structured and cleaned.
+        - **Characteristics**:
             - Stores data in a structured way.
             - Requires transformed and cleaned data.
             - Time-variant data, meaning any existing data will be archived after perid of time (Example: 1 year) and stored in the Data Lake.
@@ -257,10 +257,10 @@ Apache KFKA | ████░░░░░░ (4/10) |
 <br><br><br>
     3. **Data Mart:**
         - **Definition:** A subset of a Data Warehouse, with a focus on specific topics.
-        - Characteristics:
+        - **Characteristics**:
             - Users don't need advanced technical knowledge.
             - Subset of a Data Warehouse, smaller and topic-focused.
-            - Users have read-only access to department-specific information.
+            - Users have read-only access to specific information.
         - **Why it exists:** Provides users a quick and easy access to data for specific topics.
         - **Tools:** 
             - *Free:* Microsoft Power BI (limited features)
