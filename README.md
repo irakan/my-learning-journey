@@ -165,7 +165,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
         There are two types:
 
         - Type 1: Bare Metal Hypervisor (Native Hypervisor)
-           -  What? It directly communicates with hardware, making it efficient and secure without a middleman OS.
+           -  What? It directly communicates with hardware, making it efficient and secure without a middleman OS.It can allocate more resources to virtual machines than your server actually has. For instance, with 128GB of RAM and eight VMs, you can assign 24GB to each, totaling 192GB. However, VMs use only the necessary RAM for their tasks, not the full allocated amount.
             -  Who? Used by enterprises and data centers (e.g., Amazon, Google) for running multiple OS on one machine.
             -  When to Use: Large data centers or server farms for maximum performance and direct hardware access.
             - Example: VMware ESXi, Microsoft Hyper-V.
@@ -173,6 +173,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
         - Type 2: Hosted Hypervisor
             - What? Operates within the regular OS, less powerful but user-friendly.
+            Type 1 hypervisors allocate resources dynamically based on VM needs, making it easier. Type 2 hypervisors use fixed allocations, so if a user assigns 8GB to a VM, it takes that amount even if not fully used. This can lead to resource issues on the host machine.
             - Who? Used by developers and individuals for running multiple OS on one machine.
             - When to Use: Simple setups or software development when top performance is not critical.
             - Example: VMware Workstation, Oracle VM VirtualBox.
