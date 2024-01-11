@@ -269,7 +269,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
     **Resources:**
     - [Data Lake vs Data Warehouse vs Data Mart](https://www.sprinkledata.com/blogs/data-lake-vs-data-warehouse-vs-data-mart)
 
-- **10/01/2024**
+- **11/01/2024**
   
     Topics: (Motivation, MentalHealth)
     - These are some thoughts I have learned/read somewhere that I would like to always make them stick in my mind and I want to write them down here so I can always come back to them and remind myself of them. <br><br>
