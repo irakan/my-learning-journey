@@ -268,3 +268,22 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
     **Resources:**
     - [Data Lake vs Data Warehouse vs Data Mart](https://www.sprinkledata.com/blogs/data-lake-vs-data-warehouse-vs-data-mart)
+
+- **10/01/2024**
+  
+    Topics: (Motivation, MentalHealth)
+    - These are some thoughts I have learned/read somewhere that I would like to always make them stick in my mind and I want to write them down here so I can always come back to them and remind myself of them. <br><br>
+
+        - ITS NOT YOU!. No matter your job or how high up you are, it's not because you're smarter, better, stronger, or hard worker than others. It's not about your connections. It's because God gave you this, and you should be always grateful for it. Don't let it get to your head, and be always humble.
+<br><br>
+        - YOU ONLY HAVE CONTROL OVER YOUR ACTIONS!. You can't control your life, your thoughts, your feelings, other people, or anything else. You have 0 control over everything except your actions. Focus on what you can control.
+<br><br>
+
+        - EVERY ONE IS REPLACEABLE!. No matter how good you are at what you do. Here is the bitter truth: You are replaceable and everyone is.
+<br><br>
+
+            And always remmber, things can be seen from different perspectives/angles. :smile:
+            
+            <img src="memes/3.jpg" alt="perspective" width="400"/><br><br>
+
+
