@@ -287,3 +287,24 @@ Apache KFKA | ████░░░░░░ (4/10) |
             <img src="memes/3.jpg" alt="perspective" width="400"/><br><br>
 
 
+- **14/01/2024**
+  
+    Topics: (Redis)
+    - Ok, So I have been using Redis for a long time in many applications, for storing cache, sessions, and queues. And a question came up that I need to an answer for: Can we scale Redis? and if yes, how? <br><br>
+
+        So, I did some research and here is what I found: <br><br>
+        - Redis is in-memory data structure store, which means it stores data in RAM.
+        - The amount of data that can be stored in Redis is limited by the amount of RAM available. The more RAM you have, the more data you can store.
+        - When Redis uses all the available RAM, it supports swapping to disk. It can help to store more data and avoid crashing, but it will cause a huge performance drop.
+        - Based on a real-world test done by Redis team. Redis can handle up to 2^32 keys (4294967296 keys). And Each key can hold a value with its own limits based on the chosen data structure. For example, a string can hold up to 512MB, a list can hold up to 2^32 elements. So, if you store 1 string in each key, you can store up to 4294967296 * 512MB = 2048000000000 MB which is roughly 2 TB of data. That's a lot of data (if you have that much RAM that is :smile:).
+        - To estimate the storage capacity of Redis, you can use this formula: `Redis Storage Capacity = Total Available RAM − (Redis Metadata Overhead + OS RAM Usage)` where `Total Available RAM` is the total RAM available in the server, `Redis Metadata Overhead` Redis uses some amount of RAM for its internal metadata to manage keys, values, and other data structures efficiently. `OS RAM Usage` is the amount of RAM used by the operating system and other processes running on the server.
+
+        So, how can we scale Redis? <br><br>
+        - Add more RAM to the server. :smile:
+        - Its all about the RAM. The more RAM you have, the more data you can store. Its the bottleneck of Redis.
+        - When your redis server reach 2^32 keys, you can use Redis Cluster to scale it horizontally by adding more nodes to the cluster. And the load balancer will distribute the requests between the nodes.
+        - If your app is using Redis for sessions, you can use sticky sessions(in the load balancer) to make sure that all the subsequent requests from the same user will be routed to the same Redis node where the user's session is stored, otherwise the user will be logged out because the session is not found when the request is routed to a different Redis node by the load balancer.
+
+        **Resources:**
+        - [How Much Data Can Redis Store?](https://www.dragonflydb.io/faq/how-much-data-can-redis-store)
+        - [Redis FAQ](https://redis.io/docs/get-started/faq/)
