@@ -308,3 +308,47 @@ Apache KFKA | ████░░░░░░ (4/10) |
         **Resources:**
         - [How Much Data Can Redis Store?](https://www.dragonflydb.io/faq/how-much-data-can-redis-store)
         - [Redis FAQ](https://redis.io/docs/get-started/faq/)
+
+- **17/01/2024**
+  
+    Topics: (NestJS, TypeScript)
+    In upcoming days I will shift my focus to learning NestJS and TypeScript for various reasons.
+    - Javascript is a very popular language used by many small, big and huge companies (everywhere).
+    - Has a huge community and a lot of resources.
+    - Can be used for many things (Frontend, Backend, Mobile, Desktop, etc).
+    - In performance wise, its very fast and efficient language (very good for high traffic applications, example: Twitter/X).
+    - Its a must have skill/tool for any developer that wants to find a work in the tech industry.
+
+    So, I have enrolled in a course on Udemy to learn TypeScript and NestJS. I am on the first section of the course and here what I have learned so far:
+
+    Why does TypeScript exist? <br><br>
+    - Typescript is basically a superset of Javascript. It adds types to Javascript. It's like a layer on top of Javsacript. Typescript = Javascript + Type System.
+    - Helps you catch errors before you run your code.
+    - Helps you write better/Maintainable code.
+    - Doesnt run in the browser or nodejs. It needs to be compiled to Javascript first.
+    - It doesnt provide any performance benefits.
+    - Its like a friend sitting next to you and telling you "Hey, you made a mistake here, you should fix it before you run your code".
+
+    What is a type? <br><br>
+    A type is something that describes the different properties and functions that a value has. Lets take exmple of a string:
+    ```javascript
+    let color = 'red';
+    ```
+    The type of `color` is `string`. It has properties like `length` and functions like `toUpperCase()`. <br><br>
+    Another example: 
+    ```javascript
+    let count = 5;
+    ```
+    The type of `count` is `number`. It has properties like `toFixed()` and functions like `toString()`. <br><br>
+
+    And there are 2 categories of types:
+    - Primitive Types: (number, string, boolean, symbol, void, undefined, null)
+        - They directly store/hode the value.
+        - If you have variable a storing number 5, its like saying you have a variable in your hand.
+    - Object Types: (functions, arrays, classes, objects).
+        - They store a reference to the value.
+        - They don't hold the actual data but point to where the data is stored.
+        - If you have a variable a storing an an object called Person, its like saying you have a piece of paper in your hand that has the address where the details about that Person are stored, not the Person itself.
+
+    **Resources:**
+    - [Typescript Course](https://stackoverflow.com/questions/8790809/whats-the-difference-between-primitive-and-reference-types)
