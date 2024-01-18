@@ -351,4 +351,58 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - If you have a variable a storing an an object called Person, its like saying you have a piece of paper in your hand that has the address where the details about that Person are stored, not the Person itself.
 
     **Resources:**
-    - [Typescript Course](https://stackoverflow.com/questions/8790809/whats-the-difference-between-primitive-and-reference-types)
+    - [NestJS: The Complete Developer's Guide](https://stackoverflow.com/questions/8790809/whats-the-difference-between-primitive-and-reference-types)
+
+- **18/01/2024**
+
+    Topics: (TypeScript, Type annotations, Type inference)
+    - As I go through the typescript course, here are some things I have learned. In TypeScript, there are two important concepts: Type annotations and Type inference.
+
+        **Type Annotations:** We, as developers, use type annotations to tell TypeScript the type of value a variable will have. For example:
+        ```typescript
+        let apples: number = 5;
+        ```
+        Here, we're saying that `apples` will always be a number. If we try to assign a string, TypeScript will show an error.
+
+        **Type Inference:** TypeScript tries to figure out the type of a variable. For example:
+        ```typescript
+        let apples = 5;
+        ```
+        When we declare and initialize a variable in one line, TypeScript guesses its type. In this case, it's a number. If we try to assign a string, TypeScript will show an error.
+        <br><br>
+        ### When to use each one?
+
+        **Type Inference:** Use it whenever possible. Let TypeScript do the work of figuring out types for you.
+
+        **Type Annotations:**
+        - When declaring a variable and initializing it in separate lines:
+        ```typescript
+        let apples; // should be let apples: number;
+        ```
+        - When a function needs to clarify the type it returns:
+        ```typescript
+        const numberToString = (num: number): string => {
+            return num.toString();
+        }
+        ```
+        - When a variable's type can't be inferred(guessed by TypeScript):
+
+        When Typescript can't figure out the intended type (a scenario where a variable could potentially have multiple types), we need to use type annotations. For example:
+        ```typescript
+        let words = ['red', 'green', 'blue'];
+        let foundWord = false;
+
+        for (let i = 0; i < words.length; i++) {
+            if (words[i] === 'green') {
+                foundWord = words[i];
+            }
+        }
+        ```
+        to fix this, we need to add type annotations to `foundWord` variable:
+        ```typescript
+        let words = ['red', 'green', 'blue'];
+        let foundWord: boolean | string = false;
+        ```
+
+    **Resources:**
+    - [NestJS: The Complete Developer's Guide](https://www.udemy.com/course/nestjs-the-complete-developers-guide/)
