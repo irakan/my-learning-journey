@@ -343,15 +343,15 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
     And there are 2 categories of types:
     - Primitive Types: (number, string, boolean, symbol, void, undefined, null)
-        - They directly store/hode the value.
-        - If you have variable a storing number 5, its like saying you have a variable in your hand.
+        - They directly store/hold the value.
+        - If you have variable a storing number 5, its like saying you have a number 5 in your hand.
     - Object Types: (functions, arrays, classes, objects).
         - They store a reference to the value.
-        - They don't hold the actual data but point to where the data is stored.
+        - They don't hold the actual data, but point to where the data is stored.
         - If you have a variable a storing an an object called Person, its like saying you have a piece of paper in your hand that has the address where the details about that Person are stored, not the Person itself.
 
     **Resources:**
-    - [NestJS: The Complete Developer's Guide](https://stackoverflow.com/questions/8790809/whats-the-difference-between-primitive-and-reference-types)
+    - [NestJS: The Complete Developer's Guide](https://www.udemy.com/course/nestjs-the-complete-developers-guide/)
 
 - **18/01/2024**
 
@@ -364,7 +364,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
         ```
         Here, we're saying that `apples` will always be a number. If we try to assign a string, TypeScript will show an error.
 
-        **Type Inference:** TypeScript tries to figure out the type of a variable. For example:
+        **Type Inference:** TypeScript tries to figure out the type of a variable by itself. For example:
         ```typescript
         let apples = 5;
         ```
