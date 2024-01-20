@@ -406,3 +406,29 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
     **Resources:**
     - [NestJS: The Complete Developer's Guide](https://www.udemy.com/course/nestjs-the-complete-developers-guide/)
+
+- **20/01/2024**
+
+    Topics: (TypeScript, Type Declaration Files)
+    - Type Declaration Files are files that describe the whole API of a library that was written in Javascript. These files are the magic behind TypeScript. 
+
+        Let's break it down with a simple example:
+        Suppose there is a JavaScript library called mathLibrary.js with the following code:
+        ```javascript
+        const add = (a, b) => {
+            return a + b;
+        }
+        ```
+        If we try to use this library in a TypeScript file, we will get an error saying that `add` function doesn't exist. This is because TypeScript doesn't know anything about this library (because it's written in JavaScript without any type annotations). So, we need to create a type declaration file for this library. Let's call it mathLibrary.d.ts. It will look like this:
+        ```typescript
+        declare function add(a: number, b: number): number;
+        ```
+        Now, when we try to use this library in a TypeScript file, we will not get any errors. This is because TypeScript now knows about this library and its functions. It knows that `add` function takes 2 numbers and returns a number. So, if we try to pass a string, it will show an error.
+
+        Typescript depends on type declaration files heavily. It's what makes TypeScript so powerful. If you do `npm install typescript`, you will see that it comes with a lot of type declaration files ".d.ts" files in the node_modules.
+
+        **Resources:**
+        - [Type Declarations](https://www.typescriptlang.org/docs/handbook/2/type-declarations.html)
+
+
+
