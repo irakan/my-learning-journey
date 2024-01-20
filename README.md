@@ -427,7 +427,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
         Typescript depends on type declaration files heavily. It's what makes TypeScript so powerful. If you do `npm install typescript`, you will see that it comes with a lot of type declaration files ".d.ts" files in the node_modules.
 
-        Note: There is a tool called [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) which has a lot of type declaration files for popular JavaScript libraries. You can install them using `npm install @types/<library-name>`. For example, if you want to install type declaration files for googlemaps JS library, you can do `npm install @types/googlemaps` after that you can use it in your TypeScript file without any errors.
+        Note: There is a tool called [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) which has a lot of type declaration files for popular JavaScript libraries. You can install them using `npm install @types/<library-name>`. For example, if you want to install type declaration files for Googlemaps JS library, you can do `npm install @types/googlemaps` after that TypeScript will automatically find the type declaration files in the `node_modules/@types` folder and use them to check your code for errors.
 
         **Resources:**
         - [Type Declarations](https://www.typescriptlang.org/docs/handbook/2/type-declarations.html)
