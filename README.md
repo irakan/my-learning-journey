@@ -433,4 +433,15 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - [Type Declarations](https://www.typescriptlang.org/docs/handbook/2/type-declarations.html)
 
 
+- **24/01/2024**
 
+    Topics: (TypeScript, TSConfig)
+
+    - TSConfig is a file that tells TypeScript how to behave. Typescript will use it to know what to do when it compiles our code. It's a JSON file that has a lot of options. I will foucs on tow of them for now, which was confusing to me at first.
+
+        - `target`: This tells TypeScript what version of JavaScript to convert our code to. For example, if we set it to `ES2015`, TypeScript will convert our code to ES2015. If we set it to `ES2021`, TypeScript will convert our code to ES2021.
+        - `module`: This tells TypeScript what (module system) to use. For example, if we set it to `commonjs`, TypeScript will convert our code to CommonJS. If we set it to `es2015`, TypeScript will convert our code to ES2015 modules. The default value is `commonjs` which is the most popular module system used in NodeJS.
+
+        Here is a great post on StackOverflow that explains the difference between `target` and `module` in TSConfig: [What is the difference between target and module in tsconfig.json?](https://stackoverflow.com/a/61215252)
+
+        Also, check this website (https://node.green) to see which features are supported in each version of nodejs.
