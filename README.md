@@ -445,3 +445,16 @@ Apache KFKA | ████░░░░░░ (4/10) |
         Here is a great post on StackOverflow that explains the difference between `target` and `module` in TSConfig: [What is the difference between target and module in tsconfig.json?](https://stackoverflow.com/a/61215252)
 
         Also, check this website (https://node.green) to see which features are supported in each version of nodejs.
+
+- **31/01/2024**
+
+    Topics: (TypeScript, NestJS)
+
+    - I have been very busy lately, so I didn't have time to write about things. I reached "Persisting Data with TypeORM" section in [NestJS: The Complete Developer's Guide](https://www.udemy.com/course/nestjs-the-complete-developers-guide/) course. The learning curve is a bit steep, but I am enjoying it so far. I have learned a lot of things about TypeScript and NestJS that I will write about in the upcoming days so I can organize my thoughts about it.
+
+        <br><br>
+        <img src="memes/4.jpg" alt="perspective" width="400"/><br><br>
+
+
+        **Resources:**
+        - [NestJS: The Complete Developer's Guide](https://www.udemy.com/course/nestjs-the-complete-developers-guide/)
