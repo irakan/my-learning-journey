@@ -512,9 +512,25 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - Refresh tokens should have a long expiration time, and they are stored in HttpOnly cookies to prevent XSS attacks (only server can access them).
         - Protect a refresh token from CSRF attacks by using `SameSite ` attribute in cookie. [Check it here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) so a browser will only send a cookie to server if a request originated from same site that set cookie in first place (server).
         - As a security measure for refresh tokens. Create a table for refresh tokens in database and store refresh token's related information (user ID, expiration time, last used time, device, user agent, etc) to be able to revoke refresh token if it's stolen or check if refresh token was used before or not.
+        
 
         <br><br>
         <img src="memes/5.png" alt="perspective" width="400"/><br><br>
+
+        Drawbacks of JWT:
+        - Logout doesn't really log you out:
+            - Once a JWT token is created, it's valid until it expires. There is no way to invalidate it. So, if a user logs out, you can delete the access token from client side, but it's still valid until it expires.
+        - Blocking a user is not possible:
+            - If a user is blocked, there is no way to block them from accessing the system until their access token expires. Imagine you are a bank and one of the users's access token is stolen, you can't block it or do anything about it until it expires which is a big security risk for a bank that deals with money.
+        - Changes by system are not reflected in real time:
+            - If a user's role is changed from admin to regular user, there is no way to reflect this change in real time. The user will still have access to admin features until their access token expires.
+        -  You can't know how many current users are logged-in:
+            - Since JWT tokens are stateless, there is no way to know how many users are logged in at any given time in the system.
+
+        
+        Rule of thumb:
+        - Use traditional session-based authentication. It's more secure and flexible than JWT.
+        - JWT is a good fit for cases/situations where you issue a one-time token to be used for a specific purpose. [what is JWT good for, then?](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)
 
         **Resources:**
         - [JWT.io](https://jwt.io/)
@@ -523,3 +539,4 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - [IETF RFC 6749](https://www.rfc-editor.org/rfc/rfc6749)
         - [Access Token vs Refresh Token](https://jackywxd.medium.com/understand-jwt-access-token-vs-refresh-token-2951e5e45193)
         - [Refresh token with JWT authentication in Node.js](https://www.izertis.com/en/-/refresh-token-with-jwt-authentication-in-node-js)
+        - [Stop using JWT for sessions](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)
