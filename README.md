@@ -458,3 +458,68 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
         **Resources:**
         - [NestJS: The Complete Developer's Guide](https://www.udemy.com/course/nestjs-the-complete-developers-guide/)
+
+- **03/02/2024**
+
+    Topics: (JWT, Authentication)
+
+    - JWT (JSON Web Token) is a very popular way to authenticate users. It's a way to securely exchange data between client and server through a token. Here is how it works:
+
+        1. User sends their credentials (i.e. username and password) to the server.
+        2. The server checks if the credentials are correct.
+        3. If valid, server creates a JWT token as follows:
+            - To make a JWT token, server will use 3 things: Header, Payload, and Secret.
+                - Header: It contains type of token and hashing algorithm used to sign a signature.
+                    ```json
+                    {
+                        "alg": "HS256",
+                        "typ": "JWT"
+                    }
+                    ```
+                - Payload: It contains data that we want to send. For example, user's ID, username, email, etc.
+                    ```json
+                    {
+                        "id": 1,
+                        "name": "John Doe",
+                        "admin": true
+                    }
+                    ```
+                - Secret: It's a secret key that is used to sign a signature. It's only known by server.
+                ```
+                "MySecretKeyThatNoBodyKnowsButTheServer"
+                ```
+                - The server will use header (base64UrlEncode), payload (base64UrlEncode), and secret in order to create a signature. 
+                ```
+                signature = HMACSHA256(
+                    base64UrlEncode(header) + "." +
+                    base64UrlEncode(payload),
+                    secret
+                )
+                ```
+                - The output structure of JWT token will be like this:
+                ```
+                base64UrlEncode(header) + "." + base64UrlEncode(payload) + "." + signature 
+                ```
+        4. The server sends JWT token to client.
+
+        And that's it.  Client will send JWT token in header of each request to server.
+
+        Very important notes:
+        - JWT token is not encrypted, it's just base64UrlEncoded. So, don't put any sensitive information in payload. Meaning, if for some reason an access token is stolen, an attacker will be able to decode it and see information in payload.[Check it here](https://jwt.io/).
+        - Keep access token expiry short (e.g., 15 minutes) to limit attacker misuse if stolen.
+        - Because access token is kept on client side, it's vulnerable to XSS attacks. Server can't set HttpOnly flag on it since client needs access to include it in requests.
+        - Dont use an access token to generate a new access token when old one expires. If access token is stolen, an attacker will be able to generate new access tokens forever. Instead, use a refresh token to generate new access tokens.
+        - Refresh tokens should have a long expiration time, and they are stored in HttpOnly cookies to prevent XSS attacks (only server can access them).
+        - Protect a refresh token from CSRF attacks by using `SameSite ` attribute in cookie. [Check it here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) so a browser will only send a cookie to server if a request originated from same site that set cookie in first place (server).
+        - As a security measure for refresh tokens. Create a table for refresh tokens in database and store refresh token's related information (user ID, expiration time, last used time, device, user agent, etc) to be able to revoke refresh token if it's stolen or check if refresh token was used before or not.
+
+        <br><br>
+        <img src="memes/5.png" alt="perspective" width="400"/><br><br>
+
+        **Resources:**
+        - [JWT.io](https://jwt.io/)
+        - [SameSite Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite)
+        - [HttpOnly Cookie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies)
+        - [IETF RFC 6749](https://www.rfc-editor.org/rfc/rfc6749)
+        - [Access Token vs Refresh Token](https://jackywxd.medium.com/understand-jwt-access-token-vs-refresh-token-2951e5e45193)
+        - [Refresh token with JWT authentication in Node.js](https://www.izertis.com/en/-/refresh-token-with-jwt-authentication-in-node-js)
