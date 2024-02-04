@@ -540,3 +540,53 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - [Access Token vs Refresh Token](https://jackywxd.medium.com/understand-jwt-access-token-vs-refresh-token-2951e5e45193)
         - [Refresh token with JWT authentication in Node.js](https://www.izertis.com/en/-/refresh-token-with-jwt-authentication-in-node-js)
         - [Stop using JWT for sessions](http://cryto.net/~joepie91/blog/2016/06/13/stop-using-jwt-for-sessions/)
+
+- **04/02/2024**
+
+    Topics: (JWT, Authentication, Blacklisting JWT)
+
+    - As mentioned before, JWT has some drawbacks that make it unsuitable as an authentication system. However, there are ways to work around these drawbacks and make JWT more secure.
+
+    One way to protect our system is to blacklist JWT tokens (although JWT is stateless and was not designed to be blacklisted). But as they say, tools can be used in ways they were not designed for.
+
+    ### Here's how it works:
+
+    First, make sure to add the `issued_at` (iat) claim to the payload of the JWT token when the server creates it. It's a timestamp that represents the time when the token was issued/created. For example:
+    ```json
+    {
+        "name": "John Doe",
+        "iat": 1643961600
+    }
+    ```
+
+    Then, this is how the process will work when a user logs out or you want to block someone from accessing the system through an admin dashboard or something:
+
+    1. When a user logs out, we will add their `user_id` and `minimum_issued_at` to a blacklist table in the database.
+    ```sql
+    INSERT INTO blacklist (user_id, minimum_issued_at) VALUES (1, NOW());
+    ```
+    2. When a user tries to access the system via a JWT token, it will go through this process:
+        - The server will check if the JWT token is valid (not expired, not tampered with, etc.).
+        - If the JWT token is valid, the server will check if the `user_id` that is in the JWT payload exists in the blacklist table.
+        - If it exists, the server will check if the `iat` of the token is greater than `minimum_issued_at` in the blacklist table for that `user_id`.
+            - NOTE: If the user has multiple records in the blacklist table, the server will check for the record with the latest `minimum_issued_at` value since it's the most recent one.
+        - If the `iat` of the token is greater than `minimum_issued_at`, the server will allow the user to access the system.
+        - If it's not greater, the server will deny the user access to the system (goodbye, you are blocked 😊 here is a 403 status code).
+
+    Now, the blacklist table will have a lot of records over time (which is not good for performance/efficiency). So, we need to clean it up from time to time. We can do this by creating a cron job that runs every day and deletes all records that have `minimum_issued_at` less than the current time minus JWT token TTL (Time To Live). This way, we can keep the blacklist table clean and small.
+    ```sql
+    DELETE FROM blacklist WHERE minimum_issued_at < NOW() - INTERVAL 15 MINUTE;
+    ```
+
+    Additionally, you can also do global token invalidation by changing the secret key (not recommended, but it's an option). Or in the case of the Blacklist table, you can insert `user_id` with the value "all" and `minimum_issued_at` with the current time. And let the server check for this record first before checking for the user's record. If it exists, deny access to the system.
+
+    Moreover, you can add more columns to the blacklist table to make it more flexible. For example, you can add a `platform` column to store the platform that the token was issued for (web, mobile, etc.). You can add a `device` column to store the device that the token was issued for (laptop, phone, etc.). This way, you can invalidate tokens based on the platform or device too.
+
+    Drawbacks of Blacklisting JWT:
+    - You need to query the database for each request to check if the token is blacklisted or not (since the table will be cleaned up from time to time, it will be small and fast to query + you can add an index on `user_id` and `minimum_issued_at` columns to make it faster to query + you can use a cache like Redis to store the blacklist table in memory to make it even faster).
+
+    Conclusion:
+    - Blacklisting JWT tokens is a good way to make JWT more secure and flexible even though it's not designed to be blacklisted. It's a good way to work around the drawbacks of JWT as an authentication system.
+
+    **Resources:**
+    - [How JWTs Could Be Dangerous and Its Alternatives](https://dev.to/pragativerma18/how-jwts-could-be-dangerous-and-its-alternatives-3k3j)
