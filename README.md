@@ -590,3 +590,15 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
     **Resources:**
     - [How JWTs Could Be Dangerous and Its Alternatives](https://dev.to/pragativerma18/how-jwts-could-be-dangerous-and-its-alternatives-3k3j)
+
+- **14/02/2024**
+
+    Topics: (event loop, nodejs, browser, differences)
+
+    - I have been learning about the event loop in NodeJS and the browser for the past few days. Here are some resources that I found helpful:
+        - Node.js animated: Event Loop [Check it here](https://dev.to/nodedoctors/an-animated-guide-to-nodejs-event-loop-3g62)
+        - Event Loop in Node.js vs Browser [Check it here](https://levelup.gitconnected.com/event-loop-in-node-js-vs-browser-28a3e6b57d8b)
+
+        It seems like a complex topic, but I am starting to understand it better. I will keep digging deeper in the upcoming days.
+
+        <img src="memes/6.jpg" alt="how-docker-works" width="300"/>
