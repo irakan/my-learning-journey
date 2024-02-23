@@ -602,3 +602,34 @@ Apache KFKA | ████░░░░░░ (4/10) |
         It seems like a complex topic, but I am starting to understand it better. I will keep digging deeper in the upcoming days.
 
         <img src="memes/6.jpg" alt="how-docker-works" width="300"/>
+
+- **23/02/2024**
+
+    Topics: (s3, minio, object storage, select query)
+
+    - Did you know that you can run a select query on an object storage like S3 or Minio? I didn't know that until today, I thought you can only upload, download, and delete files from an object storage. But it turns out that you can run a select query on it too. Here is how it works by using `boto3` library which is a tool that allows you to interact with AWS services using Python.
+
+    ```python
+    import boto3
+
+    s3 = boto3.client('s3')
+
+    response = s3.select_object_content(
+        Bucket='my-bucket',
+        Key='my-file.csv',
+        ExpressionType='SQL',
+        Expression="SELECT * FROM s3object s WHERE s.column1 = 'value'",
+        InputSerialization = {'CSV': {"FileHeaderInfo": "Use"}},
+        OutputSerialization = {'CSV': {}},
+    )
+    ```
+    This will run a select query on `my-file.csv` file in `my-bucket` bucket and return the result of the query.
+
+    This is very useful when you have a huge file and you want to run a query on it without downloading the file first. And of course, you can do the same thing with Minio, which is an open-source object storage that is compatible with S3.
+
+    Note: You can only run a select query on CSV, JSON, and Parquet files. (Parquet is a columnar storage file format that is optimized for reading and writing large datasets. It's a good choice for big data analytics.)
+
+    As everything in tech, there are always trade-offs. You will face an issue if you have a lot of small files (i.e., millions of files). It will be slow and inefficient to run a select query on them even if do it in parallel. So, it's better to use other tools that will help you run a select query on a huge number of small files like Apache Hive, Apache Hadoop, Apache Spark, etc (I have never used them, but I have heard about them).
+
+    **Resources:**
+    - [SelectObjectContent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.select_object_content)
