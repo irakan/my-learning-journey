@@ -633,3 +633,51 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
     **Resources:**
     - [SelectObjectContent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.select_object_content)
+
+
+- **03/11/2024**
+
+    Topics: (gRPC, proto files)
+
+    - I have been learning about gRPC for the past few days. It's a very interesting technology that allows you to communicate between microservices in a fast and efficient way. It's a good alternative to REST API for havey data transfer between microservices.
+
+        <img src="memes/7.jpg" alt="grpc" width="400"/>
+
+
+        Lets first check what is RPC (Remote Procedure Call):
+        - Simply, it's a way to call a function another machine as if it was a local function. The network is abstracted away from the developer.
+        Here is an example of how it works, using Python's `xmlrpc` library (which is one of the many ways to do RPC):
+        ```python
+        # client.py
+        import xmlrpc.client
+
+        proxy = xmlrpc.client.ServerProxy("http://localhost:8000/")
+        print(proxy.add(2, 3))
+        ```
+
+        ```python
+        # server.py
+        from xmlrpc.server import SimpleXMLRPCServer
+        from xmlrpc.server import SimpleXMLRPCRequestHandler
+
+        def add(x, y):
+            return x + y
+
+        server = SimpleXMLRPCServer(("localhost", 8000))
+        server.register_function(add, "add")
+        server.serve_forever()
+        ```
+        When you run `client.py`, it will call `add` function in `server.py` and print the result.
+
+        From the client's perspective, it gives an illusion that the function was called locally, but in reality, it was called on another machine with the network tasks abstracted away from the developer.
+
+        Now, let's talk about gRPC:
+        - Its Google's version of RPC. It's a modern, open-source, high-performance RPC framework that can run in any environment. 
+        - It's a good fit for microservices architecture, where you have a lot of small services that need to communicate with each other in a fast and efficient way.
+        - It uses HTTP/2 for transport, Google's Protocol Buffers (protobuf) as the interface definition language.
+        - It's faster and more efficient than REST API because it uses binary data for network communication instead of JSON.
+
+        Check "Quick start" section in [gRPC official website](https://grpc.io/docs/languages/python/quickstart/) to see how to use gRPC with Python.
+
+        **Resources:**
+        - [gRPC official website](https://grpc.io/)
