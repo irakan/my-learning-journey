@@ -635,7 +635,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
     - [SelectObjectContent](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html#S3.Client.select_object_content)
 
 
-- **03/11/2024**
+- **11/03/2024**
 
     Topics: (gRPC, proto files)
 
@@ -681,3 +681,14 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
         **Resources:**
         - [gRPC official website](https://grpc.io/)
+    
+- **28/03/2024**
+
+    Topics: (software engineerer, software developer, differences)
+
+    <img src="memes/8.jpg" alt="grpc" width="200"/>
+
+    - I have been hearing these terms a lot lately (“Software Developer”, “Software Engineer”), and I was wondering what the difference between a software engineer and a software developer is. So, I did some research and here is what I found:
+
+        None, ZERO, they are the same thing. The terms "coder", “Programmer”, “Developer”, “Software Developer”, “Software Engineer” are all used interchangeably. They all refer to a person who writes code to solve problems. Different companies use different titles, it's just a matter of preference.
+    
