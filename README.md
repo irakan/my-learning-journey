@@ -691,4 +691,54 @@ Apache KFKA | ████░░░░░░ (4/10) |
     - I have been hearing these terms a lot lately (“Software Developer”, “Software Engineer”), and I was wondering what the difference between a software engineer and a software developer is. So, I did some research and here is what I found:
 
         None, ZERO, they are the same thing. The terms "coder", “Programmer”, “Developer”, “Software Developer”, “Software Engineer” are all used interchangeably. They all refer to a person who writes code to solve problems. Different companies use different titles, it's just a matter of preference.
-    
+
+- **09/05/2024**
+
+    Topics: (Python, Dependency conflict)
+
+    <img src="memes/9.png" alt="grpc" width="400"/>
+
+    - When developing a Python package, users might encounter dependency conflicts if different versions of the same dependency are required. For example, if your package requires `requests==2.26.0`, but the user's system needs `requests==2.25.1`, both cannot coexist since Python doesn’t allow multiple versions of the same package to be installed simultaneously.
+
+        ### Approaches to Avoid Dependency Conflicts:
+
+        1. **Vendor Approach**:
+            - **Vendoring Dependencies**: This involves including necessary dependencies directly in your package. It's useful for controlling versions but may increase package size.
+            - **Pure-Python Packages**: Vendoring works well for pure Python packages without their own dependencies.
+            - **Packages with Dependencies**: Vendoring becomes problematic if the vendored package has its own dependencies, leading to potential conflicts.
+
+            - **Issues**:
+                - **Dependency Clashes**: Vendoring a package with dependencies may lead to conflicts in the user's environment.
+                - **Version Control**: Keeping vendored dependencies updated is crucial for security.
+                - **Size**: Vendoring can increase package size.
+
+            **Example**:
+            - **Scenario 1**: If `requests` had no dependencies, bundling it with your package ensures the correct version is used.
+            - **Scenario 2**: Since `requests` relies on libraries like `urllib3`, including it may cause conflicts if other packages require different versions of `urllib3`.
+
+            **Note**: if you do vendoring, you need to comply with vendoring policy. [Check it here](https://pip.pypa.io/en/stable/development/vendoring-policy/)
+
+        2. **Virtual Environment Approach**:
+            - Dependency conflicts are often out of your control, especially in third-party apps, even if virtual environments are used.
+
+            - **Issues**:
+                - **Out of Our Control**: How users set up virtual environments is beyond our influence.
+                - **Third-Party Apps**: They might still face conflict issues, even in virtual environments.
+
+        3. **Fork Approach**:
+            - You can fork the conflicting package, rename it (e.g., `mypackage-requests==2.26.0`), and use the forked version in your package.
+
+            - **Issues**:
+                - **Maintenance**: Forking requires keeping the fork updated with the original package.
+                - **Child Dependencies**: If the forked package has dependencies, you may need to fork and manage those as well.
+
+
+        ### Conclusion:
+        Each approach has its benefits and challenges, and the choice depends on your specific use case and how much control you want over the dependencies. As a rule of thumb, it’s better to resolve conflicts by maintaining the package properly, ensuring compatibility with the broader Python ecosystem.
+
+        **Resources:**
+        - [How do you manage conflicting packages in your requirements.txt ?](https://www.reddit.com/r/Python/comments/ua2a7k/how_do_you_manage_conflicting_packages_in_your/)
+        - [Vendoring Policy](https://pip.pypa.io/en/stable/development/vendoring-policy/)
+        - [python-vendorize](https://github.com/mwilliamson/python-vendorize)
+        - [How do you feel about vendored packages?](https://www.reddit.com/r/Python/comments/132jk6l/how_do_you_feel_about_vendored_packages/)
+
