@@ -692,7 +692,7 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
         None, ZERO, they are the same thing. The terms "coder", “Programmer”, “Developer”, “Software Developer”, “Software Engineer” are all used interchangeably. They all refer to a person who writes code to solve problems. Different companies use different titles, it's just a matter of preference.
 
-- **09/05/2024**
+- **05/09/2024**
 
     Topics: (Python, Dependency conflict)
 
@@ -742,3 +742,48 @@ Apache KFKA | ████░░░░░░ (4/10) |
         - [python-vendorize](https://github.com/mwilliamson/python-vendorize)
         - [How do you feel about vendored packages?](https://www.reddit.com/r/Python/comments/132jk6l/how_do_you_feel_about_vendored_packages/)
 
+- **17/09/2024**
+
+    Topics: (Trunk Based Development, Git, Branching Strategies)
+
+    <img src="memes/10.jpg" alt="grpc" width="300"/>
+
+    - At work, we have been using multiple branching (development, staging, production) for a long time. We have been facing  issues with this branching strategy:
+        - **Merge Hell**: Merging changes between branches is a painful and slow process, often causing conflicts and errors.
+        - **Too Complicated**: Having many branches makes it hard to manage the code and keep everything in sync.
+        - **Codebase Drift**: Changes in one branch don’t always make it to other branches, leading to differences in the code.
+        - **No Single Source of Truth**: It’s unclear/confusing  which branch has the correct or most up-to-date code, as each branch might have changes that others don’t.
+
+        Enough is enough. its time for a change. We knew we needed a better way, so we decided to switch to using just one branch as the single source of truth. But we didn’t know exactly how to do it or what the best practices were. After doing some research, the solution we found:
+
+        ### Trunk Based Development (TBD):
+        - **Definition**: Trunk Based Development is a software development practice where all developers work on a single branch (usually called `main`, `master`, or `trunk`), and all changes are merged directly into this branch.  It's a way to reduce complexity, improve collaboration, and increase the speed of development.
+
+        Note: "Trunk" in TBD comes from the term "trunk" in the tree analogy, where all branches come from the trunk of the tree. No, it's not related to the trunk of a car as I thought at first :smile:
+
+        ### How it works:
+        - **Frequent, Small Commits**: Developers should make small and frequent changes to the `main` branch. This makes it easier to review and less likely to cause conflicts.
+        - **Short Feature Branches**: Developers can still create temporary  branches for new features/fixes, but they should merge them back into `main` (using MRs/PRs) quickly to avoid drifting too far from the `main` codebase.
+        - **Merge with MRs/PRs**: Every change should go through a merge request (Gitlab) or pull request (Github) before being merged into `main`.
+        - **MRs/PRs should be reviewed**: To ensure code quality and catch any potential issues. It's a good practice to have a code review process in place. (a code review checklist can be helpful).
+        - **MRs/PRs automated checks**: Include automated checks in the MRs/PRs to catch bugs early and ensure code quality. For example, linting, unit tests, integration tests, code coverage, etc.
+        - **Main Branch Always Ready**: The `main` branch should always be in a deployable/production state. This means that all tests should pass, and the code should be production-ready at all times.
+        - **Feature Flags**: Use feature flags to hide unfinished features from users until they are ready to be released. This way, you can merge code into the `main` branch without affecting users or blocking other developers.
+        - **CI/CD Pipelines**: Use CI/CD pipelines to automate the testing and deployment process. This ensures that changes are tested and deployed quickly and reliably.
+
+        ### Benefits of TBD:
+        - **No Merge Hell**: By merging changes often into `main`, you avoid the stress and conflicts of long-lived branches.
+        - **Reduced Complexity**: Having a single source of truth reduces complexity and makes it easier to maintain the codebase.
+        - **Better Teamwork**: Developers are working together on the same branch, which leads to more collaboration and better communication.
+        - **Faster Development**: By spending less time dealing with merges and branch management, developers can focus on building features faster.
+
+        ### Challenges of TBD:
+        - **Code Review bottleneck**: With all changes going through code reviews, it can be a bottleneck if there are too many changes to review or not enough reviewers available for all MRs/PRs.
+        - **Feature Flags Complexity**: If you use too many feature flags, it can get messy and hard to manage. It’s important to have a strategy for when to use and remove feature flags. (Feature flag management tools can help).
+        - **Testing Overhead**: Every change that goes into `main` needs to be tested carefully. You’ll need strong automated testing to catch issues early and avoid breaking things.
+
+        Finally, there is a website called [trunkbaseddevelopment.com](https://trunkbaseddevelopment.com/) that its dedicated to TBD. It has a lot of resources, articles, and best practices about TBD. I also learned that Google, Facebook, Amazon, and many other big companies use TBD as their branching strategy.
+
+        **Resources:**
+        - [Trunk Based Development](https://trunkbaseddevelopment.com/)
+        - [code.talks 2023 - Our journey from Gitflow to Trunk Based Development](https://www.youtube.com/watch?v=DDkjBqlks40)
