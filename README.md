@@ -787,3 +787,25 @@ Apache KFKA | ████░░░░░░ (4/10) |
         **Resources:**
         - [Trunk Based Development](https://trunkbaseddevelopment.com/)
         - [code.talks 2023 - Our journey from Gitflow to Trunk Based Development](https://www.youtube.com/watch?v=DDkjBqlks40)
+
+- **20/09/2024**
+
+    Topics: (chatGPT, Thoughts)
+
+    - I've been using ChatGPT for a while now, and I'm still can't fathom how it can generate code and solve complex problems (when you explain your issue clearly) in just seconds. It's not perfect, but it's incredibly impressive and a real game-changer. I have mixed feelings about it, though.
+
+        ### Random Thoughts:
+
+        - In today's world, it feels like getting things done quickly matters more than how you do them. If a company doesn't have a tool like ChatGPT, they'll fall behind and lose to their competitors who do.
+        - I feel that ChatGPT is like an amplifier. Lazy people will become lazier, and productive people will become more productive.
+        - Since a small team of developers can release alot of products quickly with ChatGPT. And since its a small team, they can't handle the support and maintenance of all these products. So, they will end up with a lot of products that are not maintained or supported properly. In the other hand, this will create a lot of job opportunities for other developers to maintain and support these products (it's a win-win situation it seems).
+        - Will it replace jobs? I belive it will create more jobs than it will replace. It will end some jobs for sure, but it will create a lot of new jobs that we can't even imagine now. It's like when any new technology is introduced ([51 Jobs That Don't Exist Anymore](https://www.indeed.com/career-advice/career-development/jobs-that-don't-exist-anymore)).
+        - What an interesting time to be alive, I mean this should be really THE MOST INTERESTING time to be alive in the history of humanity, as a software developer at least. The tools and technologies we have now are just mind-blowing. I can't imagine what the future holds for us.
+        - Its SCARY too. :smile:.
+
+
+        I feel I needed to write this down to my self in order to justify my use of ChatGPT. :smile:
+
+        <img src="memes/11.jpg" alt="chatgpt" width="300"/>
+
+        This image was generated using: DALL-E. (a sad cat stuck in a very small empty bottle).
