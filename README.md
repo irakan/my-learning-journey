@@ -809,3 +809,15 @@ Apache KFKA | ████░░░░░░ (4/10) |
         <img src="memes/11.jpg" alt="chatgpt" width="300"/>
 
         This image was generated using: DALL-E. (a sad cat stuck in a very small empty bottle).
+
+- **27/09/2024**
+
+    Topics: (Hiring, Thoughts)
+
+    - I read a quote from Elon Musk that said, "[My biggest mistake is probably] weighing too much on someone's talent and not someone's personality,", "I think it matters whether someone has a good heart." which resonated with me a lot and made me rethink how should a company hire people.
+
+        I truly belive companies need believers, not employees. People who believe in the company's mission, vision and products, who are passionate about what they do, and who are willing to go the extra mile to make things happen. These are the people who will drive the company forward and help it succeed.
+
+        I think it's important to have a good mix of talent and believers in a company. Which I think the number of believers should be more than the number of talent.
+        - Talent will help the company to build great products.
+        - Believers will help you build a great company that lasts for a long time.
