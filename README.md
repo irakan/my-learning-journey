@@ -821,3 +821,16 @@ Apache KFKA | ████░░░░░░ (4/10) |
         I think it's important to have a good mix of talent and believers in a company. Which I think the number of believers should be more than the number of talent.
         - Talent will help the company to build great products.
         - Believers will help you build a great company that lasts for a long time.
+
+
+- **29/09/2024**
+
+    Topics: (Interview, DHH)
+
+    - Today I listened to an interview with DHH (David Heinemeier Hansson) on ThePrimeTime youtube channel. 
+    
+        This was hands-down one of THE BEST 2 hour interview I have ever listened to, where DHH talked about life, being a parent, work, and his thoughts on many things. 
+        
+        It was a real eye opening for me, alot of things he said resonated with me and I changed my perspective on a lot of things too. I highly recommend you to watch it. [Check it here](https://www.youtube.com/watch?v=3R3vZJq5JW4)
+    
+        <img src="memes/12.gif" alt="dhh" width="300"/>
