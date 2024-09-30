@@ -831,6 +831,6 @@ Apache KFKA | ████░░░░░░ (4/10) |
     
         This was hands-down one of THE BEST 2 hour interview I have ever listened to, where DHH talked about life, being a parent, work, and his thoughts on many things. 
         
-        It was a real eye opening for me, alot of things he said resonated with me and I changed my perspective on a lot of things too. I highly recommend you to watch it. [Check it here](https://www.youtube.com/watch?v=3R3vZJq5JW4)
+        It was a real eye opening for me, alot of things he said resonated with me and I changed my perspective on a lot of things too. I highly recommend you to watch it. [Check it here](https://www.youtube.com/watch?v=mTa2d3OLXhg)
     
         <img src="memes/12.gif" alt="dhh" width="300"/>
