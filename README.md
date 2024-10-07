@@ -834,3 +834,149 @@ Apache KFKA | ████░░░░░░ (4/10) |
         It was a real eye opening for me, alot of things he said resonated with me and I changed my perspective on a lot of things too. I highly recommend you to watch it. [Check it here](https://www.youtube.com/watch?v=mTa2d3OLXhg)
     
         <img src="memes/12.gif" alt="dhh" width="300"/>
+
+- **07/10/2024**
+    Topics: (Race Conditions, Cron Jobs, Scheduling, Distributed Systems)
+
+    - Recently, I have been working on a NestJs application that has some cron jobs that run at specific times. But since the application is running on multiple instances, these cron jobs were running multiple times (once on each instance).
+
+        ### Example:
+        ```typescript
+        @Cron('*/1 * * * * *')
+        async test(): Promise<void> {
+            console.log('Running cron job');
+        }
+        ```
+        This cron job runs every second. But if you have multiple instances running, it will run multiple times (once on each instance).
+
+        <img src="memes/13.jpg" alt="race-condition" width="500"/>
+
+        ### Possible Solutions:
+        1. **Database Unique Constraint**:
+            - Use a database unique constraint to the job. This way, only one instance will be able to run the job at a time.
+            - **Example**: You can create a table called `cron_jobs` with a column called `name` and a unique constraint on the `name` column. When an instance wants to run the job, it will try to insert a row with the job name. If it fails (due to the unique constraint), it means another instance is already running the job.
+
+            Note: naming the cron job with a unique name is very important. I am using `2024-10-05T12:00:00Z` to cover cases from days to seconds and leaving milliseconds out, since I don't have cron jobs that run in milliseconds.
+            ```typescript
+            @Cron('*/1 * * * * *')
+            async test(): Promise<void> {
+                const now = new Date()
+                const isoStringWithoutMilliseconds = now.toISOString().split('.')[0] + 'Z'; // e.g., 2024-10-05T12:00:00Z
+                const cronJobName = `test_${isoStringWithoutMilliseconds}`
+
+                try {
+                    await this.cronJobRepository.insert({ name: cronJobName });
+                } catch (error) {
+                    if (error.code && error.code === 'ER_DUP_ENTRY') {
+                        console.error('Cron job already exists:', cronJobName)
+                    }
+                    return
+                }
+
+                console.log('start run cron job for:', cronJobName);
+            }
+            ```
+            Pros:
+            - Simple and easy to implement and understand.
+            - Works well with existing database infrastructure.
+            - Gives you database logs and history of cron jobs.
+
+            Cons:
+            - Requires table setup.
+            - You need a way to clean up old cron jobs from the table.
+
+        2. **Redis Atomic locking**
+            - Use Redis to create an atomic lock (to prevent Race Conditions) for the job. This way, only one instance will be able to run the job at a time.
+
+            Reids Documentation: [SET](https://redis.io/docs/latest/commands/set/):
+            > The command SET resource-name anystring NX EX max-lock-time is a simple way to implement a locking system with Redis.
+
+            What it does:
+            - It sets the value of the key `resource-name` to `anystring` if the key does not exist.
+            - It sets an expiration time of `max-lock-time` seconds on the key.
+            - If the key already exists, it returns `null`.
+
+            This command is atomic, meaning it will either set the key or return `null` in a single operation without any interference from other clients.
+
+            ```typescript
+            @Cron('*/1 * * * * *')
+            async test(): Promise<void> {
+                const now = new Date()
+                const isoStringWithoutMilliseconds = now.toISOString().split('.')[0] + 'Z'; // e.g., 2024-10-05T12:00:00Z
+                const cronJobName = `test_${isoStringWithoutMilliseconds}`
+
+                const lockKey = `lock:${cronJobName}`
+
+                const lock = await this.redisClient.set(lockKey, '1', 'NX', 'EX', 60);
+                if (!lock) {
+                    console.error('Cron job already exists:', cronJobName)
+                    return
+                }
+
+                console.log('start run cron job for:', cronJobName);
+            }
+            ```
+
+            Pros:
+            - Redis is very fast and efficient.
+            - Works well with existing Redis infrastructure.
+            - No need to clean up old cron jobs. TTL will take care of it.
+
+            Cons:
+            - Introduces a new dependency (Redis).
+
+        3. **Environment Variable**
+            - Use an environment variable to set a master (.i.e., `IS_MASTER=true`) instance. Only the master instance will run cron jobs.
+
+            ```typescript
+            @Cron('*/1 * * * * *')
+            async test(): Promise<void> {
+                if (process.env.IS_MASTER !== 'true') {
+                    console.error('This instance is not the master instance');
+                    return;
+                }
+
+                console.log('Running cron job');
+            }
+            ```
+            Pros:
+            - Simple and easy to implement and understand.
+            - No need for additional setup or dependencies.
+
+            Cons:
+            - Requires manual intervention to set the environment variable.
+            - Not suitable for dynamic environments where instances can come and go.
+            - What if the master instance goes down? You need a way to promote another instance to master.
+        
+        4. **Expose an API**
+            - Expose an API endpoint that triggers the cron job.
+            - Use a load balancer to route requests to a single instance.
+            - Scheduling the cron job is done using external tools like Kubernetes CronJob.
+
+            ```typescript
+            @Post('run-cron-job')
+            async runCronJob(): Promise<void> {
+                console.log('Running cron job');
+            }
+            ```
+
+            Pros:
+            - No need for additional setup or dependencies.
+            - Jobs can be triggered manually or scheduled.
+
+            Cons:
+            - Requires additional setup for load balancing and scheduling.
+            - You need a way to handle Authurization and Authentication.
+
+        5. **Standalone Service**
+            - Create a standalone service that handles scheduling and running cron jobs. And making sure that only one instance of the service is running at all times.
+
+            Pros:
+            - Centralized management of cron jobs.
+
+            Cons:
+            - Requires additional setup and maintenance.
+            - You may need access to other related internal services.
+
+        ### Conclusion:
+        Each solution has its benefits and challenges, It's important to consider factors like scalability, reliability, and ease of maintenance when choosing a solution.
