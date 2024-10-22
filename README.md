@@ -995,7 +995,8 @@ Apache KFKA | ████░░░░░░ (4/10) |
         My biggest issue is what to build? I have a lot of ideas, and many of them suck :smile:. But, I have one idea that came to my while taking a shower today (as always xD), that I think it's good even though it's not unique but I really like it. 
 
         My current thought pattren for this is:
-        Find current products in the market that are doing well `->` Find what they are missing `->` Make it better than the competition
+        
+        Find current products in the market that are doing well `->` Make it better than the competition
 
         So, I decided to start working on it. I am going to start with a small MVP (Minimum Viable Product) and see if people like it or not. If they do, I will continue working on it. If they don't, I will move on to the next idea.
 
