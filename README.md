@@ -984,11 +984,13 @@ Apache KFKA | ████░░░░░░ (4/10) |
 - **22/10/2024**
     Topics: (Start-up, Thoughts)
 
-    - My dream was always to start my own company, where I can work on things I like, and be my own boss xD. (It seems like everyone dream, right? :smile:).
+    - My dream was always to start my own company, where I can work on things I like, and be my own boss and have alot of money xD (It seems like everyone dream, right? :smile:).
 
         <img src="memes/14.png" alt="start-up" width="300"/>
 
-        You really don't want to be just a consumer of this world, It would be beautiful if you can contribute something to this world ..no?, even if it's a small thing.
+        You really don't want to be just a consumer of this world, It would be beautiful if you can contribute something to this world ..no?, even if it's a small thing. As steve jobs said:
+
+        > “The minute you understand that you can poke life, and that if you push something in, something will pop out the other side. That you can change it and you can mould it…that’s maybe the most important thing… Embrace it, change it, improve it, make your mark upon it. Once you learn that, you’ll want to change life and make it better. You’ll never be the same again.”
 
         My biggest issue is what to build? I have a lot of ideas, and many of them suck :smile:. But, I have one idea that came to my while taking a shower today (as always xD), that I think it's good even though it's not unique but I really like it. 
 
