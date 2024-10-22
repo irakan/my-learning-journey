@@ -980,3 +980,24 @@ Apache KFKA | ████░░░░░░ (4/10) |
 
         ### Conclusion:
         Each solution has its benefits and challenges, It's important to consider factors like scalability, reliability, and ease of maintenance when choosing a solution.
+
+- **22/10/2024**
+    Topics: (Start-up, Thoughts)
+
+    - My dream was always to start my own company, where I can work on things I like, and be my own boss xD. (It seems like everyone dream, right? :smile:).
+
+        <img src="memes/14.png" alt="start-up" width="300"/>
+
+        You really don't want to be just a consumer of this world, It would be beautiful if you can contribute something to this world ..no?, even if it's a small thing.
+
+        My biggest issue is what to build? I have a lot of ideas, and many of them suck :smile:. But, I have one idea that came to my while taking a shower today (as always xD), that I think it's good even though it's not unique but I really like it. 
+
+        So, I decided to start working on it. I am going to start with a small MVP (Minimum Viable Product) and see if people like it or not. If they do, I will continue working on it. If they don't, I will move on to the next idea.
+
+
+        Current stack I am thinking to use:
+        - GO (Backend) I need to learn it first :smile: The idea needs a very fast backend.
+        - NuxtJs - VueJs (Frontend)
+        - Postgres (Database) or SingleStore (Database) but I havent decided yet.
+
+        This is going to be soo much fun to work on. Lets see how it goes.
